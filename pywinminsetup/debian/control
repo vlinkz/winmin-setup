@@ -1,0 +1,12 @@
+Source: pywinminsetup
+Maintainer: Victor Fuentes <hyruleterminatriforce@gmail.com>
+
+Package: pywinminsetup
+Version: 0.1-1
+Section: base
+Priority: optional
+Architecture: any
+Depends:  python3
+Maintainer: Victor Fuentes <hyruleterminatriforce@gmail.com>
+Description: Winmin setup application
+
