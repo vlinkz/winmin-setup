@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
     gdk_threads_enter();*/
 	gtk_init(&argc, &argv); // init Gtk
 
-	builder = gtk_builder_new_from_file ("winmin.glade");
+	builder = gtk_builder_new_from_resource ("/org/vlinkz/winminsetup/winmin.glade");
  
 	window = GTK_WIDGET(gtk_builder_get_object(builder, "WinminSetupIntro"));
 

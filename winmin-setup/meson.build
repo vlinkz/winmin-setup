@@ -7,7 +7,17 @@ deps = [
   dependency('python3-embed'),
 ]
 
-executable('winmin-setup', 'winmin-setup.c',
-  dependencies: deps,
-  install: true, install_dir : '/usr/bin',
+gnome = import('gnome')
+
+sources = gnome.compile_resources('setup-resources',
+  'winmin-setup.gresource.xml',
+  c_name: 'resources'
 )
+
+
+executable('winmin-setup', 'winmin-setup.c', sources,
+  dependencies: deps,
+  install: true, #install_dir : '/usr/bin',
+  link_args : '-rdynamic',
+)
+
