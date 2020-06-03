@@ -6,7 +6,7 @@ Version: 0.1-1
 Section: base
 Priority: optional
 Architecture: any
-Depends:  python3
+Depends:  python3 (>= 3.7.3-1)
 Maintainer: Victor Fuentes <hyruleterminatriforce@gmail.com>
 Description: Winmin setup application
 
