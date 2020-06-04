@@ -5,14 +5,13 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 setup(
-    name='pywinminsetup',  # Required
-    version='0.0.1',  # Required
-    description='winmin-setup helper script',  # Optional
-    author='Victor Fuentes',  # Optional
-    author_email='hyruleterminatirforce@gmail.com',  # Optional
-    #packages=find_packages(where='pywinminsetup'),  # Required
+    name='pywinminsetup',
+    version='0.0.1',
+    description='winmin-setup helper script',
+    author='Victor Fuentes',
+    author_email='hyruleterminatirforce@gmail.com',
     python_requires='>=3.5, <4',
-    project_urls={  # Optional
+    project_urls={
         'Source': 'https://github.com/vlinkz',
     },
     packages=['pywinminsetup'],

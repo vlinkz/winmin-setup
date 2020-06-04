@@ -7,8 +7,6 @@
 #include <gtk/gtkx.h>
 #include <ctype.h>
 #include <stdio.h>
-//#include <libvirt/libvirt-common.h>
-//#include <libvirt/libvirt-domain.h>
 #include <Python.h>
 #define PY_SSIZE_T_CLEAN
 #include <spice-client-gtk-3.0/spice-client-gtk.h>
@@ -38,16 +36,6 @@ int instructionindex;
 
 void get_socket()
 {
-    /*wchar_t *program = Py_DecodeLocale("winsetup.py", NULL);
-    Py_SetProgramName(program);
-    Py_Initialize();
-    PyRun_SimpleFile("pywinminsetup.py\n");
-    if (Py_FinalizeEx() < 0) {
-        exit(120);
-    }
-    
-    PyMem_RawFree(program);
-    return 0;*/
     PyObject *pName, *pModule, *pFunc;
     PyObject *pArgs, *pValue;
     int i;
@@ -68,7 +56,6 @@ void get_socket()
         return 1;
     }
     PyTuple_SetItem(pArgs,0,pValue);
-    //PyObject_SetItem(pArgs,0,isopath);*/
     while (gtk_events_pending ())
         gtk_main_iteration ();
     pValue = PyObject_CallObject(pFunc, pArgs);
@@ -133,10 +120,6 @@ void setup_spice(int count) {
 
   g_object_set(session,"uri",sock);
   
-  //char** test;
-  //g_object_get(session,"uri",&test);
-  //printf("URI: %s\n",test);
-
   mainchannel =  spice_channel_new(session,1,0);
   spice_session_connect(session);
 
@@ -150,7 +133,6 @@ void setup_spice(int count) {
 
   display = spice_display_new(session,0);
   displaywidget = GTK_WIDGET(display);
-  //GtkPaned * mainboxpane = GTK_PANED(mainbox);
   gtk_window_resize(window, 1318, 800);
   gtk_window_set_position(window, GTK_WIN_POS_CENTER);
 
