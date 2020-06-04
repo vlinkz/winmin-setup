@@ -30,6 +30,7 @@ $ sudo python3 setup.py install
 
 - spice-client-gtk
 - libvirt-clients
+- python3
 
 # Running
 
